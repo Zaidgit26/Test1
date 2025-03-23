@@ -1,8 +1,8 @@
-import './App.css'
 import { useEffect } from 'react'
 import quant5xLogo from './assets/quant5x-logo.png'
 import '@fontsource/anybody'
 import './fonts.css'
+import './app.css'
 import { BsArrowUpRight } from 'react-icons/bs'
 
 function App() {
@@ -20,13 +20,13 @@ function App() {
         <div className="logo-container">
           <img src={quant5xLogo} alt="Quant 5X Logo" className="logo" />
         </div>
-        <nav className="navigation">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Careers</a></li>
+        <nav>
+          <ul className="nav-list">
+            <li><a href="#" className="nav-link">Home</a></li>
+            <li><a href="#" className="nav-link">About us</a></li>
+            <li><a href="#" className="nav-link">Works</a></li>
+            <li><a href="#" className="nav-link">Contact us</a></li>
+            <li><a href="#" className="nav-link">Careers</a></li>
           </ul>
         </nav>
       </header>
@@ -46,7 +46,9 @@ function App() {
             <span className="title-highlight">Quant5X</span>
           </h1>
           <p className="hero-subtitle">Empower Your Business. Predict The Future. Act With Confidence.</p>
-          <button className="cta-button">Explore Solutions <BsArrowUpRight className="arrow" /></button>
+          <button className="cta-button">
+            Explore Solutions <BsArrowUpRight className="arrow-icon" />
+          </button>
         </div>
       </main>
     </>
