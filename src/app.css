@@ -1,0 +1,274 @@
+/* Existing background effects */
+.floating-circle {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #E7A921 0%, #E7A92133 70%, #E7A92100 100%);
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.3; /* Reduced opacity to be more subtle as in the reference image */
+  animation: floatAnimation 30s infinite ease-in-out;
+  mix-blend-mode: screen;
+  top: -100px;
+  left: -100px;
+  box-shadow: 0 0 120px #E7A92166; /* Adjusted shadow for better depth */
+  z-index: 1; /* Ensure proper layering with noise effect */
+}
+
+.purple-radial {
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  background: radial-gradient(circle, rgba(85, 0, 84, 0.9) 0%, rgba(85, 0, 84, 0.4) 60%, rgba(85, 0, 84, 0) 100%);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.95; /* Increased opacity to match the reference image */
+  animation: purpleFloatAnimation 75s infinite ease-in-out;
+  mix-blend-mode: screen;
+  bottom: -200px;
+  right: -200px;
+  box-shadow: 0 0 200px rgba(85, 0, 84, 0.6); /* Enhanced shadow for better depth */
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translate(-20%, -10%) scale(1); /* Start from left top */
+    background: radial-gradient(circle, #E7A921E6 0%, #E7A92166 70%, #E7A92100 100%);
+    filter: blur(75px);
+  }
+  33% {
+    transform: translate(50%, 80%) scale(1.2); /* Move to center bottom with larger scale for depth */
+    background: radial-gradient(circle, #E7A921CC 0%, #E7A92144 70%, #E7A92100 100%);
+    filter: blur(85px);
+  }
+  66% {
+    transform: translate(150%, -10%) scale(1.1); /* Move to right top */
+    background: radial-gradient(circle, #E7A921D9 0%, #E7A92159 70%, #E7A92100 100%);
+    filter: blur(80px);
+  }
+ 
+  100% {
+    transform: translate(-20%, -10%) scale(1); /* Back to left top */
+    background: radial-gradient(circle, rgba(231, 169, 33, 0.9) 0%, rgba(231, 169, 33, 0.4) 70%, rgba(231, 169, 33, 0) 100%);
+    filter: blur(75px);
+  }
+}
+
+@keyframes purpleFloatAnimation {
+  0% {
+    transform: translate(-50%, 20%) scale(1); /* Start from left bottom */
+    background: radial-gradient(circle, rgba(85, 0, 84, 0.8) 0%, rgba(85, 0, 84, 0.3) 70%, rgba(85, 0, 84, 0) 100%);
+  }
+  25% {
+    transform: translate(-30%, -40%) scale(1.2); /* Move to left top with scale */
+    background: radial-gradient(circle, rgba(85, 0, 84, 0.8) 0%, rgba(85, 0, 84, 0.3) 70%, rgba(85, 0, 84, 0) 100%);
+  }
+  60% {
+    transform: translate(80%, 10%) scale(0.9); /* Move to right center with smaller scale */
+    background: radial-gradient(circle, rgba(85, 0, 84, 0.8) 0%, rgba(85, 0, 84, 0.3) 70%, rgba(85, 0, 84, 0) 100%);
+  }
+  100% {
+    transform: translate(-50%, 20%) scale(1); /* Back to left bottom */
+    background: radial-gradient(circle, rgba(85, 0, 84, 0.8) 0%, rgba(85, 0, 84, 0.3) 70%, rgba(85, 0, 84, 0) 100%);
+  }
+}
+
+/* Enhanced noise effect overlay with improved depth perception */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 1; /* Reduced opacity to match the reference image */
+  z-index: 100;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light; /* Changed to soft-light for more subtle effect */
+  box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.4); /* Adjusted inner shadow */
+  backdrop-filter: contrast(1.02) brightness(0.99); /* Subtle contrast adjustment */
+  image-rendering: high-quality; /* Ensure high-quality rendering */
+}
+
+/* Remove the body::before noise effect as we're enhancing the main noise element */
+body::before {
+  display: none;
+}
+
+/* Header and Navigation Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 20px;
+  width: auto;
+  margin-left: 150px;
+  margin-top: 25px;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin-right: 150px;
+  margin-top: 25px;
+  padding: 0;
+}
+
+.navigation a {
+  color: #BBBBBB;
+  text-decoration: none;
+  font-family: 'Giga Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0px;
+  font-weight: lighter;
+  line-height: 130%;
+  transition: opacity 0.3s ease;
+}
+.navigation a:hover {
+  opacity: 0.8;
+}
+
+/* Main Content Styles */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+  margin-top: 2rem;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin-top: -150px;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Anybody', sans-serif;
+  font-weight: 400;
+  font-size: 55px;
+  margin-left: 10px;
+  margin-left: 165px;
+  color: #B08083;
+  text-decoration: none;
+  gap: 0.2rem;
+}
+
+.animated-words {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  height: 55px;
+  vertical-align: top;
+}
+
+.animated-words span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: wordSlide 6s linear infinite 0s;
+}
+
+.animated-words span:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.animated-words span:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes wordSlide {
+  0%, 100% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10%, 30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.title-line {
+  display: inline;
+  text-decoration: none;
+}
+
+.title-highlight {
+  background: linear-gradient(90deg, #A500A5 0%, #FE4451 64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-subtitle {
+  font-family: 'Giga Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  color: #939393;
+  max-width: 600px;
+  margin-left: 165px;
+  margin-top: 24px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+.cta-button {
+  background-color: #F4F4F4;
+  color: #000000;
+  border: none;
+  margin-left: 165px;
+  border-radius: 32px;
+  margin-top: 24px;
+  padding: 0.9rem 2.2rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  border-radius: 28px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cta-button:hover .arrow {
+  transform: translateX(4px);
+}

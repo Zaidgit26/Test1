@@ -1,0 +1,69 @@
+/* Import Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@400;700&family=Space+Grotesk:wght@400;600&display=swap');
+
+/* Custom font for Giga Sans */
+@font-face {
+  font-family: 'Giga Sans';
+  src: url('./assets/fonts/Demo_Fonts/Fontspring-DEMO-gigasans-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Giga Sans';
+  src: url('./assets/fonts/Demo_Fonts/Fontspring-DEMO-gigasans-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Giga Sans';
+  src: url('./assets/fonts/Demo_Fonts/Fontspring-DEMO-gigasans-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Giga Sans';
+  src: url('./assets/fonts/Demo_Fonts/Fontspring-DEMO-gigasans-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Helvetica font */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/helvetica/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/helvetica/Helvetica-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/helvetica/helvetica-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font classes for easy application */
+.giga-sans-font {
+  font-family: 'Giga Sans', 'Space Grotesk', sans-serif;
+}
+
+.helvetica-font {
+  font-family: 'Helvetica', Arial, sans-serif;
+}
