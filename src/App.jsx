@@ -3,7 +3,6 @@ import quant5xLogo from './assets/quant5x-logo.png'
 import '@fontsource/anybody'
 import './fonts.css'
 import './app.css'
-import { BsArrowUpRight } from 'react-icons/bs'
 
 function App() {
   useEffect(() => {
@@ -47,7 +46,11 @@ function App() {
           </h1>
           <p className="hero-subtitle">Empower Your Business. Predict The Future. Act With Confidence.</p>
           <button className="cta-button">
-            Explore Solutions <BsArrowUpRight className="arrow-icon" />
+            Explore Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
         </div>
       </main>

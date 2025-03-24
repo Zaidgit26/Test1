@@ -5,8 +5,8 @@
   background: radial-gradient(circle, #E7A921 0%, #E7A92133 70%, #E7A92100 100%);
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.3;
-  animation: floatAnimation 30s infinite ease-in-out;
+  opacity: 0.4;
+  animation: floatAnimation 25s infinite ease-in-out;
   mix-blend-mode: screen;
   top: -100px;
   left: -100px;
@@ -78,7 +78,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.1;
+  opacity: 100;
   z-index: 100;
   mix-blend-mode: soft-light;
   box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.4);
@@ -118,7 +118,7 @@
 }
 
 .nav-link {
-  color: #F4F4F4;
+  color: #BBBBBB;
   font-family: 'Giga Sans', sans-serif;
   font-size: 1rem;
   line-height: 130%;
@@ -154,7 +154,7 @@
   font-family: 'Anybody', sans-serif;
   font-weight: 400;
   font-size: 55px;
-  margin-left: 165px;
+  margin-left: 160px;
   color: #F4F4F4;
 }
 
@@ -214,9 +214,9 @@
   font-family: 'Giga Sans', sans-serif;
   font-size: 1.3rem;
   font-weight: 300;
-  color: #B08083;
+  color: #939393;
   max-width: 600px;
-  margin-left: 165px;
+  margin-left: 160px;
   margin-top: 1.5rem;
   line-height: 1.5;
 }
@@ -225,7 +225,7 @@
   background: #F4F4F4;
   color: black;
   border-radius: 32px;
-  margin-left: 165px;
+  margin-left: 160px;
   margin-top: 1.5rem;
   padding: 0.9rem 2.2rem;
   font-family: 'Helvetica', sans-serif;
@@ -234,23 +234,24 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  transition: all 0.3s ease-in-out;
+  gap: 0.5rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.cta-button svg {
+  width: 25px;
+  height: 25px;
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.cta-button:hover svg {
+  transform: rotate(-45deg) translate(1px, -1px);
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.2);
   border-radius: 28px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background: white;
-}
-
-.arrow-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  transition: transform 0.3s;
-}
-
-.cta-button:hover .arrow-icon {
-  transform: translateX(4px);
 }
