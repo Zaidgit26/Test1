@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import quant5xLogo from './assets/quant5x-logo.png'
 import '@fontsource/anybody'
 import './fonts.css'
 import './app.css'
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   useEffect(() => {
     document.title = 'Quant 5X - Turn your Insights into Decisions'
   }, [])
@@ -15,17 +17,28 @@ function App() {
       <div className="purple-radial"></div>
       <div className="noise"></div>
       
+      <div className={`menu-overlay ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(false)}></div>
+      
       <header className="header">
         <div className="logo-container">
           <img src={quant5xLogo} alt="Quant 5X Logo" className="logo" />
         </div>
-        <nav>
+        <button 
+          className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav className={menuOpen ? 'active' : ''}>
           <ul className="nav-list">
-            <li><a href="#" className="nav-link">Home</a></li>
-            <li><a href="#" className="nav-link">About us</a></li>
-            <li><a href="#" className="nav-link">Works</a></li>
-            <li><a href="#" className="nav-link">Contact us</a></li>
-            <li><a href="#" className="nav-link">Careers</a></li>
+            <li><a href="#" className="nav-link" onClick={() => setMenuOpen(false)}>Home</a></li>
+            <li><a href="#" className="nav-link" onClick={() => setMenuOpen(false)}>About us</a></li>
+            <li><a href="#" className="nav-link" onClick={() => setMenuOpen(false)}>Works</a></li>
+            <li><a href="#" className="nav-link" onClick={() => setMenuOpen(false)}>Contact us</a></li>
+            <li><a href="#" className="nav-link" onClick={() => setMenuOpen(false)}>Careers</a></li>
           </ul>
         </nav>
       </header>
